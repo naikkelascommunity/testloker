@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karir - ADAKOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .job-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 md:p-12">
+
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">Peluang Karir</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="job-card bg-white p-6 rounded-xl flex items-start gap-4">
+                <div class="w-24 h-24 bg-blue-100 rounded-lg flex-shrink-0 flex items-center justify-center">
+                    <span class="text-blue-600 font-bold text-xs">IMG</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-xl font-bold text-gray-900 uppercase">Marketing Trainee</h2>
+                    <p class="text-gray-600 text-sm mt-1 mb-4">Menyusun konten, kampanye, dan aktivitas promosi untuk pengembangan brand.</p>
+                    
+                    <div class="mb-4">
+                        <span class="text-xs font-semibold text-gray-500 block">DOMISILI:</span>
+                        <select class="w-full mt-1 border p-2 rounded text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option>Jakarta (Head Office)</option>
+                            <option>Surabaya</option>
+                            <option>Bandung</option>
+                        </select>
+                    </div>
+
+                    <a href="https://adakomnaikkelas.com/karir/marketingtrainee/" class="inline-block bg-[#FBBF24] hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-lg text-sm">
+                        LIHAT PELUANG KARIR
+                    </a>
+                </div>
+            </div>
+
+            <div class="job-card bg-white p-6 rounded-xl flex items-start gap-4">
+                <div class="w-24 h-24 bg-green-100 rounded-lg flex-shrink-0 flex items-center justify-center">
+                    <span class="text-green-600 font-bold text-xs">IMG</span>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-xl font-bold text-gray-900 uppercase">Konsultan Bisnis</h2>
+                    <p class="text-gray-600 text-sm mt-1 mb-4">Mendampingi UMKM dalam strategi, branding, & operasional.</p>
+                    
+                    <div class="mb-4">
+                        <span class="text-xs font-semibold text-gray-500 block">DOMISILI:</span>
+                        <select class="w-full mt-1 border p-2 rounded text-sm bg-gray-50">
+                            <option>Remote (WFH)</option>
+                            <option>Jakarta</option>
+                        </select>
+                    </div>
+
+                    <a href="#" class="inline-block bg-[#FBBF24] hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-lg text-sm">
+                        LIHAT PELUANG KARIR
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
