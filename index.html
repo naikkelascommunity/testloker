@@ -3,71 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karir - ADAKOM</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Lowongan Kerja - ADAKOM</title>
     <style>
-        .job-card {
-            transition: all 0.3s ease;
-            border: 1px solid #e5e7eb;
+        /* CSS FONT POPPINS SESUAI INPUT ANDA */
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 300;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format('woff2');
         }
-        .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+        }
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 600;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+        }
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 700;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+        }
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .loker-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        /* HEADLINES */
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #27ae60; /* Warna Hijau Gaji */
+            margin-bottom: 4px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: "📍";
+            margin-right: 8px;
+        }
+
+        /* DESKRIPSI SECTION */
+        .description-section {
+            margin-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 25px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            margin-top: 20px;
+        }
+
+        .text-content {
+            font-size: 15px;
+            color: #444;
+            font-weight: 400;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* BUTTON */
+        .btn-container {
+            margin-top: 40px;
+        }
+
+        .btn-lamar {
+            display: block;
+            width: 100%;
+            background-color: #FBBF24; /* Kuning ADAKOM */
+            color: #000;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-lamar:hover {
+            background-color: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .loker-card { padding: 25px; }
+            h1 { font-size: 24px; }
+            h2 { font-size: 18px; }
         }
     </style>
 </head>
-<body class="bg-gray-50 p-6 md:p-12">
+<body>
 
-    <div class="max-w-6xl mx-auto">
-        <h1 class="text-3xl font-bold mb-8 text-gray-800">Peluang Karir</h1>
+    <div class="loker-card">
+        <h1>Marketing Trainee</h1>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <div class="job-card bg-white p-6 rounded-xl flex items-start gap-4">
-                <div class="w-24 h-24 bg-blue-100 rounded-lg flex-shrink-0 flex items-center justify-center">
-                    <span class="text-blue-600 font-bold text-xs">IMG</span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-xl font-bold text-gray-900 uppercase">Marketing Trainee</h2>
-                    <p class="text-gray-600 text-sm mt-1 mb-4">Menyusun konten, kampanye, dan aktivitas promosi untuk pengembangan brand.</p>
-                    
-                    <div class="mb-4">
-                        <span class="text-xs font-semibold text-gray-500 block">DOMISILI:</span>
-                        <select class="w-full mt-1 border p-2 rounded text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                            <option>Jakarta (Head Office)</option>
-                            <option>Surabaya</option>
-                            <option>Bandung</option>
-                        </select>
-                    </div>
+        <h2>Rp 4.500.000 - Rp 7.000.000</h2>
+        
+        <h3>Jakarta Selatan (Head Office)</h3>
 
-                    <a href="https://adakomnaikkelas.com/karir/marketingtrainee/" class="inline-block bg-[#FBBF24] hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-lg text-sm">
-                        LIHAT PELUANG KARIR
-                    </a>
-                </div>
-            </div>
+        <div class="description-section">
+            <p class="text-content">
+                Kami mencari individu kreatif dan berenergi tinggi untuk bergabung dalam program Marketing Trainee ADAKOM. Anda akan mendapatkan pelatihan intensif dalam pengembangan brand dan strategi digital.
+            </p>
 
-            <div class="job-card bg-white p-6 rounded-xl flex items-start gap-4">
-                <div class="w-24 h-24 bg-green-100 rounded-lg flex-shrink-0 flex items-center justify-center">
-                    <span class="text-green-600 font-bold text-xs">IMG</span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-xl font-bold text-gray-900 uppercase">Konsultan Bisnis</h2>
-                    <p class="text-gray-600 text-sm mt-1 mb-4">Mendampingi UMKM dalam strategi, branding, & operasional.</p>
-                    
-                    <div class="mb-4">
-                        <span class="text-xs font-semibold text-gray-500 block">DOMISILI:</span>
-                        <select class="w-full mt-1 border p-2 rounded text-sm bg-gray-50">
-                            <option>Remote (WFH)</option>
-                            <option>Jakarta</option>
-                        </select>
-                    </div>
+            <div class="section-title">Tugas & Tanggung Jawab:</div>
+            <ul class="text-content">
+                <li>Menyusun strategi konten kreatif untuk media sosial perusahaan.</li>
+                <li>Menganalisis performa kampanye pemasaran secara berkala.</li>
+                <li>Melakukan riset pasar dan kompetitor untuk mencari peluang baru.</li>
+                <li>Membangun hubungan baik dengan mitra bisnis dan klien.</li>
+            </ul>
 
-                    <a href="#" class="inline-block bg-[#FBBF24] hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-lg text-sm">
-                        LIHAT PELUANG KARIR
-                    </a>
-                </div>
-            </div>
+            <div class="section-title">Kualifikasi:</div>
+            <ul class="text-content">
+                <li>Pendidikan minimal D3/S1 semua jurusan (diutamakan Komunikasi/Pemasaran).</li>
+                <li>Usia maksimal 27 tahun.</li>
+                <li>Memiliki kemampuan komunikasi dan negosiasi yang sangat baik.</li>
+                <li>Familiar dengan alat analisis media sosial dan tren digital.</li>
+                <li>Mampu bekerja di bawah tekanan dan berorientasi pada target.</li>
+            </ul>
 
+            <div class="section-title">Catatan Tambahan:</div>
+            <p class="text-content">
+                Proses seleksi akan dilakukan dalam 3 tahap. Hanya kandidat yang memenuhi kualifikasi yang akan dihubungi untuk tahap interview.
+            </p>
+        </div>
+
+        <div class="btn-container">
+            <a href="URL_FORMULIR_LAMARAN_ANDA" class="btn-lamar">LAMAR SEKARANG</a>
         </div>
     </div>
 
