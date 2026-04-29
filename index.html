@@ -72,17 +72,19 @@
             margin-bottom: 15px;
         }
 
-/* Update CSS untuk logo */
+/* Update CSS untuk memperbesar logo */
 .brand-logo {
     display: flex;
     align-items: center;
-    height: 40px; /* Tentukan tinggi maksimal area logo */
+    height: 60px; /* Diperbesar dari sebelumnya */
+    margin-bottom: 15px; /* Memberi jarak lebih ke judul loker */
 }
 
 .brand-logo img {
-    max-height: 100%; /* Agar logo tidak melebihi tinggi container */
-    max-width: 120px; /* Agar logo tidak terlalu lebar */
-    display: block;
+    max-height: 100%; 
+    width: auto;      
+    max-width: 160px; /* Diperlebar agar logo yang memanjang tidak terpotong */
+    object-fit: contain;
 }
 
         .action-icons {
