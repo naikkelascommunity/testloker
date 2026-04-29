@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Lowongan - ADAKOM</title>
+    <style>
+        /* FONT POPPINS */
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+        }
+        @font-face {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 600;
+          src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        /* HEADER DETAIL (Warna Kuning ADAKOM di bagian atas kecil sebagai aksen) */
+        .detail-header {
+            padding: 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .logo-container {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            color: #FBBF24;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* INFO SINGKAT (Layout Baris) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #333;
+            font-size: 15px;
+        }
+
+        /* ISI DESKRIPSI */
+        .detail-body {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 3px solid #FBBF24;
+            display: inline-block;
+        }
+
+        .content-list {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .content-list li {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* FOOTER ACTION (Tombol Lamar Tetap Mengikuti Layout Detail Astra) */
+        .detail-footer {
+            padding: 30px 40px;
+            background: #fdfdfd;
+            border-top: 1px solid #eee;
+            text-align: right;
+        }
+
+        .btn-lamar-large {
+            display: inline-block;
+            background-color: #FBBF24;
+            color: #000;
+            padding: 15px 50px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .btn-lamar-large:hover {
+            background-color: #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .detail-header, .detail-body { padding: 25px; }
+            h1 { font-size: 22px; }
+            .btn-lamar-large { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header: Mirip Astra tanpa ikon share/save -->
+    <div class="detail-header">
+        <div class="logo-container">
+            <!-- Path gambar di folder image Github Anda -->
+            <img src="image/logo-adakom.png" alt="Logo Perusahaan">
+        </div>
+        <h1>Marketing Executive</h1>
+        <p class="company-name">ADAKOM NAIK KELAS</p>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Bidang Pekerjaan</strong>
+                Pemasaran
+            </div>
+            <div class="info-item">
+                <strong>Jenjang Jabatan</strong>
+                Staff / Profesional
+            </div>
+            <div class="info-item">
+                <strong>Lokasi</strong>
+                Surabaya, Jawa Timur
+            </div>
+            <div class="info-item">
+                <strong>Batas Lamar</strong>
+                30 Juni 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- Body: Berisi List Deskripsi & Kualifikasi -->
+    <div class="detail-body">
+        <div class="section-title">Deskripsi Pekerjaan</div>
+        <ul class="content-list">
+            <li>Mengembangkan strategi pemasaran kreatif untuk meningkatkan awareness brand.</li>
+            <li>Melakukan riset pasar secara berkala untuk memantau tren industri.</li>
+            <li>Mengelola kampanye iklan di berbagai platform media sosial.</li>
+            <li>Bekerja sama dengan tim konten untuk memastikan pesan brand konsisten.</li>
+        </ul>
+
+        <div class="section-title">Kualifikasi</div>
+        <ul class="content-list">
+            <li>Pendidikan minimal S1 Pemasaran, Komunikasi, atau bidang terkait.</li>
+            <li>Pengalaman minimal 1-2 tahun di bidang marketing.</li>
+            <li>Memiliki kemampuan analisis data dan kreativitas tinggi.</li>
+            <li>Mampu bekerja dalam tim dan memiliki komunikasi yang baik.</li>
+        </ul>
+    </div>
+
+    <!-- Footer: Tombol Lamar Besar -->
+    <div class="detail-footer">
+        <a href="URL_FORMULIR_LAMARAN_ANDA" class="btn-lamar-large">Lamar Sekarang</a>
+    </div>
+</div>
+
+</body>
+</html>
