@@ -103,14 +103,19 @@
             margin-bottom: 35px;
         }
 
-        .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 15px;
-            display: block;
-        }
-
+    .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    display: inline-block; /* Penting: agar garis bawah hanya sepanjang teks */
+    border-bottom: 4px solid #FBBF24; /* Garis kuning tebal */
+    padding-bottom: 5px; /* Jarak antara teks dan garis */
+    text-transform: uppercase; /* Opsional: membuat judul jadi huruf besar semua */
+    letter-spacing: 0.5px;
+}
+        
         /* Class untuk Paragraf Fleksibel */
         .text-block {
             font-size: 15px;
@@ -215,48 +220,43 @@
                 </div>
             </div>
 
-            <!-- Bagian Deskripsi: Struktur Fleksibel -->
-            <div class="content-section">
-                <span class="section-title">Deskripsi Pekerjaan</span>
-                
-                <span class="text-block">
-                    Anda akan bergabung dalam tim dinamis yang berfokus pada pertumbuhan UMKM di Indonesia. Sebagai garda terdepan pemasaran, Anda akan mengelola strategi yang berdampak langsung pada branding perusahaan.
-                </span>
-
-                <ul class="list-block">
-                    <li>Membangun strategi digital ads di Facebook & Instagram.</li>
-                    <li>Mengelola hubungan baik dengan media dan mitra strategis.</li>
-                    <li>Melakukan reporting performa marketing bulanan.</li>
-                </ul>
-
-                <span class="text-block">
-                    Kami mencari individu yang tidak hanya bisa bekerja, tapi juga memiliki visi untuk memajukan ekonomi lokal melalui edukasi bisnis yang tepat sasaran.
-                </span>
-            </div>
-
-            <!-- Bagian Persyaratan: Struktur Fleksibel -->
-            <div class="content-section">
-                <span class="section-title">Persyaratan Pekerjaan</span>
-
-                <span class="text-block">
-                    Sebelum melamar, pastikan Anda memenuhi kriteria kualifikasi yang kami tetapkan di bawah ini untuk menjaga standar kualitas pelayanan kami.
-                </span>
-
-                <ul class="list-block">
-                    <li>Pendidikan minimal S1 (Terbuka untuk semua jurusan).</li>
-                    <li>Memiliki pengalaman 1 tahun (Fresh graduate dipersilakan melamar).</li>
-                    <li>Memiliki komunikasi yang baik dan persuasif.</li>
-                </ul>
-
-                <span class="text-block">
-                    Proses rekrutmen ini tidak dipungut biaya apapun. Hati-hati terhadap penipuan yang mengatasnamakan ADAKOM.
-                </span>
-            </div>
-
-            <div class="footer-actions">
-                <a href="URL_FORM_LAMARAN" class="btn-primary">Lamar Sekarang</a>
-                <a href="index.html" class="btn-secondary">Kembali</a>
-            </div>
+        <!-- Deskripsi Pekerjaan -->
+        <div class="content-section">
+            <p class="text-block">
+                Sebagai Marketing Executive, kamu akan berperan penting dalam mendorong pertumbuhan lewat strategi pemasaran yang berbasis data, eksperimen, dan kreativitas. Posisi ini cocok buat kamu yang ingin berada di garis depan pengembangan brand dan konversi pasar. 
+            </p>
+            <h2 class="section-title">Deskripsi Pekerjaan</h2>
+            <ul class="list-block">
+                <li>Tanggung jawab pertama Anda...</li>
+                <li>Tanggung jawab kedua Anda...</li>
+            </ul>
+        </div>
+        
+        <!-- Kualifikasi -->
+        <div class="content-section">
+            <h2 class="section-title">Kualifikasi</h2>
+            <ul class="list-block">
+                <li>Pendidikan minimal...</li>
+                <li>Pengalaman kerja minimal...</li>
+                <li>Keahlian teknis yang dibutuhkan...</li>
+            </ul>
+        </div>
+        
+        <!-- Benefit -->
+        <div class="content-section">
+            <h2 class="section-title">Benefit</h2>
+            <ul class="list-block">
+                <li>Gaji kompetitif dan bonus performa.</li>
+                <li>Tunjangan kesehatan dan asuransi.</li>
+                <li>Lingkungan kerja yang dinamis dan suportif.</li>
+                <li>Kesempatan pengembangan karier yang luas.</li>
+            </ul>
+        </div>
+            
+        <div class="footer-actions">
+            <a href="URL_FORM_LAMARAN" class="btn-primary">Lamar Sekarang</a>
+            <a href="index.html" class="btn-secondary">Kembali</a>
+        </div>
         </div>
 
         <!-- KOLOM SIDEBAR -->
