@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Lamaran - ADAKOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+        .input-field { width: 100%; border: 1.5px solid #ddd; padding: 12px; border-radius: 8px; outline: none; transition: 0.3s; }
+        .input-field:focus { border-color: #FBBF24; }
+        .btn-submit:disabled { background-color: #ccc; cursor: not-allowed; box-shadow: none; }
+    </style>
+</head>
+<body class="py-10 px-4">
+
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <!-- Header Nama Loker -->
+        <div class="bg-[#FBBF24] p-6 text-center">
+            <p class="text-sm font-semibold uppercase tracking-wider text-black/60">Formulir Lamaran Kerja</p>
+            <h1 class="text-2xl font-bold text-black uppercase">Marketing Executive</h1>
+        </div>
+
+        <form id="uploadForm" class="p-8 space-y-5">
+            <input type="hidden" name="loker" value="Marketing Executive">
+
+            <div>
+                <label class="block text-sm font-bold mb-1">Nama Lengkap *</label>
+                <input type="text" name="nama" class="input-field" required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-1">Alamat Email *</label>
+                <input type="email" name="email" class="input-field" required>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold mb-1">Domisili *</label>
+                    <input type="text" name="domisili" class="input-field" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-1">No. HP Aktif (WhatsApp) *</label>
+                    <input type="tel" name="nohp" class="input-field" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-2">Referensi Loker *</label>
+                <select name="referensi" class="input-field" required>
+                    <option value="">-- Pilih Referensi --</option>
+                    <option>LinkedIn</option><option>Instagram</option><option>Tiktok</option>
+                    <option>Telegram</option><option>Facebook</option><option>WhatsApp</option>
+                    <option>Teman</option><option>Lainnya</option>
+                </select>
+            </div>
+
+            <hr class="my-6">
+
+            <!-- Upload Section -->
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-bold">Upload CV (PDF, Max 2MB) *</label>
+                    <input type="file" id="cv_file" accept=".pdf" class="mt-1 block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-yellow-50 file:text-yellow-700 hover:file:bg-yellow-100" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold">Bukti Follow Instagram @adakomnaikkelas *</label>
+                    <input type="file" id="ig_file" accept="image/*" class="mt-1 block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-yellow-50 file:text-yellow-700 hover:file:bg-yellow-100" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold">Bukti Follow Tiktok @adakomnaikkelas *</label>
+                    <input type="file" id="tiktok_file" accept="image/*" class="mt-1 block w-full text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-yellow-50 file:text-yellow-700 hover:file:bg-yellow-100" required>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled class="btn-submit w-full bg-[#FBBF24] text-black font-bold py-4 rounded-xl shadow-lg mt-6 transition duration-300">
+                KIRIM LAMARAN SEKARANG
+            </button>
+            <p id="msg" class="text-center text-sm font-semibold mt-4 hidden"></p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwvLbhpgutTeQ1uu5PUmLrjNDI1_3PIPxNPiDkxgEzRX-0nwxjqYSFnCwVC2J3D2US6NA/exec'; // GANTI INI
+
+        // Validasi Tombol Otomatis
+        form.addEventListener('input', () => {
+            const isValid = form.checkValidity();
+            submitBtn.disabled = !isValid;
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Memproses Data...";
+
+            const formData = new FormData(form);
+            
+            // Helper function to convert file to base64
+            const toBase64 = file => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+            });
+
+            // Lampirkan file ke formData
+            const cv = document.getElementById('cv_file').files[0];
+            const ig = document.getElementById('ig_file').files[0];
+            const tiktok = document.getElementById('tiktok_file').files[0];
+
+            if(cv) { formData.append('cv_file', await toBase64(cv)); formData.append('cv_file_name', cv.name); formData.append('cv_file_type', cv.type); }
+            if(ig) { formData.append('ig_file', await toBase64(ig)); formData.append('ig_file_name', ig.name); formData.append('ig_file_type', ig.type); }
+            if(tiktok) { formData.append('tiktok_file', await toBase64(tiktok)); formData.append('tiktok_file_name', tiktok.name); formData.append('tiktok_file_type', tiktok.type); }
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(res => {
+                    document.getElementById('msg').innerHTML = "✅ Lamaran Terkirim! Terimakasih.";
+                    document.getElementById('msg').classList.remove('hidden');
+                    form.reset();
+                    submitBtn.innerText = "KIRIM LAMARAN SEKARANG";
+                })
+                .catch(err => {
+                    console.error(err);
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "KIRIM LAMARAN SEKARANG";
+                });
+        });
+    </script>
+</body>
+</html>
